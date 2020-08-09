@@ -106,19 +106,21 @@ def handle_photo():
         date_str, info = filename.split("_")
         info, _ = info.split(".")
         date = datetime.strptime(date_str, "%Y-%m-%d")
-        year_month = date_str[0:7]            
+        year_month_day = date_str[0:10]            
         if i == 0:  # 处理第一个文件
-            new_dict = {"date": year_month, "arr":{'year': date.year,
+            new_dict = {"date": year_month_day, "arr":{'year': date.year,
                                                                    'month': date.month,
+																   'day': date.day,
                                                                    'link': [filename],
                                                                    'text': [info],
                                                                    'type': ['image']
                                                                    }
                                         } 
             list_info.append(new_dict)
-        elif year_month != list_info[-1]['date']:  # 不是最后的一个日期，就新建一个dict
-            new_dict = {"date": year_month, "arr":{'year': date.year,
+        elif year_month_day != list_info[-1]['date']:  # 不是最后的一个日期，就新建一个dict
+            new_dict = {"date": year_month_day, "arr":{'year': date.year,
                                                    'month': date.month,
+												  'day': date.day,
                                                    'link': [filename],
                                                    'text': [info],
                                                    'type': ['image']
@@ -131,7 +133,7 @@ def handle_photo():
             list_info[-1]['arr']['type'].append('image')
     list_info.reverse()  # 翻转
     final_dict = {"list": list_info}
-    with open("G:\Blog\source\photos\photos_data.json","w") as fp:
+    with open("G:\Blog\source\photos\data.json","w") as fp:
         json.dump(final_dict, fp)
 
 def cut_photo():
