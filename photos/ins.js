@@ -79,6 +79,8 @@
       };
     }
 
+	
+
     /**
      * @name impush-client 
      * @description 这个项目让我发家致富…
@@ -123,7 +125,7 @@
           src += '';
 
           liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
-                <a href="' + src + '" itemprop="contentUrl" data-size="1080*1080" data-type="' + type + '" data-target="' + src + '">\
+                <a href="' + src + '" itemprop="contentUrl"  data-size="1920x1080" data-type="' + type + '" data-target="' + src + '">\
                   <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
                 </a>\
                 <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
@@ -329,6 +331,7 @@
   },
   /* 2 */
   /***/
+
   function(module, exports) {
 
     'use strict';
@@ -361,15 +364,20 @@
 
           linkEl = figureEl.children[0]; // 
 
+	       var img = new Image();
+           img.src = linkEl.getAttribute('href');
+           linkEl.setAttribute('data-size', img.naturalWidth + 'x' + img.naturalHeight);
+
           size = linkEl.getAttribute('data-size').split('x');
           type = linkEl.getAttribute('data-type');
           target = linkEl.getAttribute('data-target');
-          // create slide object
+          // create slide object 
           item = {
             src: linkEl.getAttribute('href'),
             w: parseInt(size[0], 10),
             h: parseInt(size[1], 10)
           };
+
 
           if (figureEl.children.length > 1) {
             item.title = figureEl.children[1].innerHTML;

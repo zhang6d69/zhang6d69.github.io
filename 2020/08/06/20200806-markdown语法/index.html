@@ -45,6 +45,11 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
@@ -90,15 +95,30 @@
 					<a class="bilibili" target="_blank" href="https://space.bilibili.com/289617386" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
 			</div>
-                       <!--网易云音乐播放器-->
-                      
-                        <div style="position:absolute; bottom:-120px; left:auto; right:50px; width:85%">
-                          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=52 src="//music.163.com/outchain/player?type=2&id=502043537&auto=0&height=32"></iframe>
-                       </div>
-                    
 		</nav>
-	</header>		
+	</header>
+	
 </div>
+
+<!--aplayer-->
+  
+ <div class="aplayer"
+   data-id="456686821" 
+   data-server="netease" 
+   data-type="playlist" 
+   data-fixed="true" 
+   data-mini="true" 
+   data-listFolded="false" 
+   data-order="random" 
+   data-preload="none" 
+   data-autoplay="false" 
+   data-listmaxheight="100px"
+   data-mutex="true"
+   data-lrctype="0"
+   >
+</div>
+
+
 
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
@@ -206,6 +226,27 @@
 
           
         <!-- 添加完成 -->
+
+       <!--aplayer-->
+	
+              <div class="aplayer"
+   data-id="456686821" 
+   data-server="netease" 
+   data-type="playlist" 
+   data-fixed="true" 
+   data-mini="true" 
+   data-listFolded="false" 
+   data-order="random" 
+   data-preload="none" 
+   data-autoplay="false" 
+   data-listmaxheight="100px"
+   data-mutex="true"
+   data-lrctype="0"
+   >
+</div>
+
+
+
 
 	
       </header>
